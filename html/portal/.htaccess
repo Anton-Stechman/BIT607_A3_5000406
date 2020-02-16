@@ -1,4 +1,4 @@
+AuthUserFile /html/portal/.htpasswd
 AuthType Basic
 AuthName "Staff Login"
-AuthUserFile /html/portal/.htpasswd
 Require valid-user
