@@ -24,20 +24,21 @@ const loadPage = (page) =>
 //Take input from button
 const selectButton = (button) =>
 {
-    if ($(button).attr('name') != "login") //change iframe for customer navigation
-    {
         //find the current button 
-        currentButton = getCurrentSelection();
+    currentButton = getCurrentSelection();
 
-        $(currentButton).removeClass('button-selected');
-        $(button).addClass('button-selected');
-
+    $(currentButton).removeClass('button-selected');
+    $(button).addClass('button-selected');
+    
+    //change iframe for customer navigation
+    if ($(button).attr('name') != "login") 
+    {
         //load page from button value
         loadPage(getPage());
     }
     else //go to staff login page
     {
-        window.open(page, '_blank');
+        window.open(getPage(), '_blank');
     }
 }
 
