@@ -29,17 +29,21 @@ const selectButton = (button) =>
 
     $(currentButton).removeClass('button-selected');
     $(button).addClass('button-selected');
+
+    loadPage(getPage());
     
+    //to let user login through another tab uncomment this block
     //change iframe for customer navigation
-    if ($(button).attr('name') != "login") 
+    /*if ($(button).attr('id') != "login") 
     {
         //load page from button value
         loadPage(getPage());
     }
     else //go to staff login page
     {
+        console.log("working");
         window.open(getPage(), '_blank');
-    }
+    }*/
 }
 
 //initialize buttons, add button click function

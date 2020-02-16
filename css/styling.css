@@ -1,8 +1,10 @@
 body
 {
     /*Generic body stylig here e.g font color etc*/
-        color: aqua;
-        text-align: center
+        color: #792a2a;
+        text-align: center;
+        font-family: 'Bree Serif', serif;
+    font-size: 2.5vw;
 }
 li
 {
