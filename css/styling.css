@@ -60,6 +60,8 @@ button:focus
 .banner-right img
 {
     float: right;
+    height: 20vh;;
+    width:auto;
 }
 .banner-button
 {
@@ -126,7 +128,7 @@ button:focus
     height: 100%;
     left: 0;
     position: fixed;
-    background-color: rgba(78, 82, 82, 0.74);
+    background-color: rgb(173, 173, 173);
 }
 .menu
 {
