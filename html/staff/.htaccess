@@ -1,4 +1,4 @@
 AuthType Basic
 AuthName "Staff Login"
 AuthUserFile .htpassword
-require valid-user
+Require valid-user
