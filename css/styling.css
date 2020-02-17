@@ -6,6 +6,11 @@ body
         font-family: 'Bree Serif', serif;
     font-size: 2.5vw;
 }
+input, select, textarea
+{
+
+    font-size: 2vw;
+}
 li
 {
     list-style: none;
@@ -93,7 +98,7 @@ button:focus
     align-content: center;
 
 }
-.pageContainer iframe
+iframe
 {
     position: relative;
     margin: auto;
@@ -113,6 +118,7 @@ button:focus
     height: 15vh;
     font-size: 5vw;
 }
+
 .main-banner-image
 {
     height: 75vh;
@@ -142,4 +148,17 @@ button:focus
     display: grid;
     width: 50vw;
     height: auto;
+}
+.menu-employee button
+{
+    width: 33%;
+    height: 10vh;
+    font-size: 2vw;
+}
+.display
+{
+    overflow: hidden;
+    margin: auto;
+    height: 60vh;
+    width: 70vw;
 }

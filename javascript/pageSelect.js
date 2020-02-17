@@ -19,6 +19,7 @@ var getPage = () =>
 const loadPage = (page) => 
 {
     $(displayPort).attr('src', page);
+    
 }
 
 //Take input from button
@@ -26,24 +27,12 @@ const selectButton = (button) =>
 {
         //find the current button 
     currentButton = getCurrentSelection();
-
+    var subMenu = Array.from(currentButton.children);
+    
     $(currentButton).removeClass('button-selected');
     $(button).addClass('button-selected');
 
     loadPage(getPage());
-    
-    //to let user login through another tab uncomment this block
-    //change iframe for customer navigation
-    /*if ($(button).attr('id') != "login") 
-    {
-        //load page from button value
-        loadPage(getPage());
-    }
-    else //go to staff login page
-    {
-        console.log("working");
-        window.open(getPage(), '_blank');
-    }*/
 }
 
 //initialize buttons, add button click function

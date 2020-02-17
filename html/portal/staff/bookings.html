@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,user-scalable=no">
+        <link ref="stylesheet" href="../../../css/styling.css">
+        <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="main">
+            
+        </div>
+        <footer>
+        </footer>
+        <script>
+            const mainDiv = document.querySelector('.main');
+            
+            function removeBooking(booking)
+            {
+                console.log("Working");
+                localStorage.removeItem(booking.value);
+            }
+            
+            var format_booking = (obj) => 
+            {
+                var str = "<p>>Booking:<br>"
+                str += ">>Name:___________" + obj.bName + "<br>";
+                str += ">>>Phone:_________" + obj.bPhone + "<br>";
+                str += ">>>>Guests:_______" + obj.bSeats + "<br>";
+                str += ">>>>>Date:________" + obj.bDate + "<br>";
+                str += ">>>>>>Time:_______" + obj.bTime +"<br>";
+                str += ">>>>>>>Comments:__" + obj.bComment + "<br>";
+                str += ">>>>>>>>Ref:_______" + obj.ref + "</p>";
+                str += "<button value='"+obj.ref+"'onclick='removeBooking(this)'>Delete Booking</button><br>";
+                return str;
+            }
+            
+            var get_Bookings = () => 
+            {
+                var str = mainDiv.innerHTML;
+                
+                for (i = 0, len = localStorage.length; i < len; ++i)
+                {
+                    var obj = JSON.parse(localStorage.getItem(localStorage.key(i)));
+                    str += format_booking(obj);
+                }
+                
+                return str;
+            }
+            
+            window.onload = () =>
+            {
+                mainDiv.innerHTML = get_Bookings();
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,user-scalable=no">
+        <link rel="stylesheet" href="../css/styling.css">
+        <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
+        <script src="../javascript/jquery.js"></script>
+
+    </head>
+    <body>
+        <div class="main"> 
+
+            <ul>
+                <li>
+                    <label for="bName">&#42;Booking Name:</label><br>
+                    <input type="text" class="bName">
+                </li>
+                <br><br>
+                <li>
+                    <label>&#42;Contact Number:</label><br>
+                    <input type="number" class="bNumber">
+                </li>
+                <br><br>
+                <li>
+                    <label for="seats">&#42;Seats <br></label>
+                    <select class="seats">
+                        <option value="" selected disabled hidden></option>
+                        <option value="1">&nbsp;1</option>
+                        <option value="2">&nbsp;2</option>
+                        <option value="3">&nbsp;3</option>
+                        <option value="4">&nbsp;4</option>
+                        <option value="5">&nbsp;5</option>
+                        <option value="6">&nbsp;6</option>
+                        <option value="7">&nbsp;7</option>
+                        <option value="8">&nbsp;8</option>
+                        <option value="9">&nbsp;9</option>
+                        <option value="10">10</option>
+                        <option value="10+">10&#43;</option>
+                    </select>
+                </li>
+                <br><br>
+
+                <li>
+                    <label for="bDate">&#42;Booking Date:</label><br>
+                    <input class="bDate" type="date">
+                </li>
+                <br><br>
+
+                <li>
+                    <label for="bTime">&#42;Booking Time:<br></label>
+                    <input class="bTime" type="time">
+                </li>
+                <br><br>
+
+                <li>
+                    <label for="comment">Comments:</label><br>
+                    <textarea class="comment" rows="6" cols="60"></textarea>
+                </li>
+                <br><br>
+
+                <li>
+                    <button onclick="submit()">Submit</button><button onclick="clearForm()">Clear</button>
+                </li>
+            </ul>
+            
+            </div>
+        <footer>
+        </footer>
+        <script>
+            
+            const name          = document.querySelector('.bName');
+            const phone         = document.querySelector('.bNumber');
+            const seats         = document.querySelector('.seats');
+            const date          = document.querySelector('.bDate');
+            const time          = document.querySelector('.bTime');
+            const cmnt          = document.querySelector('.comment');
+            const allReqFields  = [name, phone, seats, date, time]; //All Fields User is required to fill out
+            const allFileds     = [name, phone, seats, date, time, cmnt];
+            
+            function logBooking(booking, ref)
+            {
+                //save object to local storage
+                localStorage.setItem(ref, JSON.stringify(booking));
+                
+            }
+        
+            const clearForm = () => 
+            {
+                for (i = 0; i < allFileds.length; i++)
+                {
+                    allFileds[i].value = "";
+                }
+            }
+            const createBooking = () => 
+            {
+                var ref = "#";
+                //create booking ref #
+                for (i = 0; i < 5; i++)
+                {
+                    var min = 0;
+                    var max = 9;
+                    ref += "" + Math.floor(Math.random() * (+max - +min));
+                }
+                 
+                let booking = new newBooking(name.value, phone.value, seats.value, date.value, time.value, cmnt.value, ref);
+                
+                //log booking
+                logBooking(booking, ref);
+                
+                //alert user
+                alert("Booking Confirmed! \nYour Reference Number Is: " + ref);
+                
+                //clear form
+                clearForm();
+            }
+            const validateBooking = () =>
+            {
+                var valid = false;
+                
+                for (i =0; i < allReqFields.length;i++)
+                {
+                    if (allReqFields[i].value == "")
+                    {
+                        valid = false;
+                        break;
+                    }
+                    else
+                    {
+                        valid = true;
+                    }
+                }
+                
+                if (valid)
+                {
+                    if (cmnt.value == "")
+                    {
+                        cmnt.value = "no comment"
+                    }
+                    if (seats.value == "10+")
+                    {
+                        alert("Please visit our 'Contact Us' page to arrange bookings of more than 10 guests");
+                        clearForm();
+                    }
+                    else
+                    {
+                        createBooking();
+                    }
+                }
+                else
+                {
+                    alert("Please Fill In All Fields Marked *");
+                }
+            }
+            
+            function submit() 
+            {
+                validateBooking();
+            }
+            
+        
+            class newBooking
+            {           
+                
+                constructor(bName, bPhone, bSeats, bDate, bTime, bComment, ref)
+                {
+                    this.bName      = bName;
+                    this.bPhone     = bPhone;
+                    this.bSeats     = bSeats;
+                    this.bDate      = bDate;
+                    this.bTime      = bTime;
+                    this.bComment   = bComment;
+                    this.ref        = ref;
+                    
+                this.book = function()
+                    {
+                        var str = ">New Booking:<br>";
+                        str += ">>Name:____________"+bName + "<br>";
+                        str += ">>>Phone:__________"+bPhone + "<br>";
+                        str += ">>>>Guests:________"+bSeats + "<br>";
+                        str += ">>>>>Date:_________"+bDate + "<br>";
+                        str += ">>>>>>Time:________"+bTime + "<br>";
+                        str += ">>>>>>>Comments:___"+bComment + "<br>";
+                        str += ">>>>>>>>Ref:_______"+ref;
+                        str += "<br>=====================================<br>"
+                        return str;
+                    }
+                    
+                }
+                
+
+            }
+        </script>
+
+    </body>
+</html>
