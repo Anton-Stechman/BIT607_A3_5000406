@@ -7,6 +7,33 @@
         <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
     </head>
     <body>
+        <style>
+            .main
+            {
+                color: #792a2a;
+                font-family: 'Bree Serif', serif;
+                font-size: 2.5vw;
+            }
+            button
+            {
+                align-content: center;
+                color: #792a2a;
+                border: 0;
+                border-style: none;
+                background: transparent;
+                font-family: 'Bree Serif', serif;
+                cursor: pointer;
+            }
+            button:hover
+            {
+                background-color: rgba(31, 31, 31, 0.79);
+                color: aliceblue;
+            }
+            button:focus
+            {
+                outline: none;
+            }
+        </style>
         <div class="main">
             
         </div>
@@ -23,15 +50,16 @@
             
             var format_booking = (obj) => 
             {
-                var str = "<p>>Booking:<br>"
+                var str = "===========================================<br>"
+                str+="<button value='"+obj.ref+"'onclick='removeBooking(this)'>Delete This Booking</button><p>>Booking:<br>"
                 str += ">>Name:___________" + obj.bName + "<br>";
                 str += ">>>Phone:_________" + obj.bPhone + "<br>";
                 str += ">>>>Guests:_______" + obj.bSeats + "<br>";
                 str += ">>>>>Date:________" + obj.bDate + "<br>";
                 str += ">>>>>>Time:_______" + obj.bTime +"<br>";
                 str += ">>>>>>>Comments:__" + obj.bComment + "<br>";
-                str += ">>>>>>>>Ref:_______" + obj.ref + "</p>";
-                str += "<button value='"+obj.ref+"'onclick='removeBooking(this)'>Delete Booking</button><br>";
+                str += ">>>>>>>>Ref:_______" + obj.ref + "<br>";
+                str += "===========================================</p>";
                 return str;
             }
             
