@@ -55,6 +55,7 @@ function frameLoad()
         {
             $(getCurrentSelection()).removeClass('button-selected');
             $(btn).addClass('button-selected');
+            break;
         }      
     });
 
