@@ -11,18 +11,25 @@
             <div class="main-banner-image">
                 <img src="../resources/hme_bg.jpg">
             </div>
-            <div>
+            <div class="buttons">
                 <div>
-                    <button class="main-button">Menu</button>
-                    <button class="main-button">Reservations</button>
+                    <button class="main-button" onclick="goto_page(this)" value="menu.html">Menu</button>
+                    <button class="main-button" onclick="goto_page(this)" value="reservations.html">Reservations</button>
                 </div>
                 <div>
-                    <button class="main-button">Find Us</button>
-                    <button class="main-button">Open Hours</button>
+                    <button class="main-button" onclick="goto_page(this)" value="find.html">Find Us</button>
+                    <button class="main-button" onclick="goto_page(this)" value="contact.html">Open Hours</button>
                 </div>
             </div>
         </div>
-        <footer>
-        </footer>
+        <script>
+            function goto_page(button)
+            {
+                if (button.value != null)
+                {
+                    window.location = button.value;
+                }
+            }
+        </script>
     </body>
 </html>

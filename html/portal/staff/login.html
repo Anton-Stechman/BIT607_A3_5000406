@@ -6,22 +6,36 @@
         <title></title>
         <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../../../css/styling.css">
+        <script src="/BIT607_A3_5000406/javascript/jquery.js"></script>
     </head>
     <body>
         <div class="main">
             <h1>Welcome Employee</h1>
             <div class="main">
                 <div class="menu menu-employee">
-                    <button>View Roster</button>
-                    <button>View Bookings</button>
-                    <button>View Enquiries</button>
+                    <button onclick="changePage(this)" value="roster.html">View Roster</button>
+                    <button onclick="changePage(this)" value="bookings.html">View Bookings</button>
                 </div>
                 <div class="display">
-                    <iframe src="bookings.html"></iframe>
+                    <iframe class="frame" src="roster.html"></iframe>
                 </div>
             </div>
         </div>
         <footer>    
         </footer>
+        
+        <script>
+            const frame = document.querySelector('.frame');
+            
+            var page;
+            
+            function changePage(button) 
+            {
+                page = button.value;
+
+                $(frame).attr('src', page);
+            }
+
+        </script>
     </body>
 </html>

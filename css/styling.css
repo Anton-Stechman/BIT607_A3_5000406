@@ -151,7 +151,7 @@ iframe
 }
 .menu-employee button
 {
-    width: 33%;
+    width: 50%;
     height: 10vh;
     font-size: 2vw;
 }
@@ -161,4 +161,15 @@ iframe
     margin: auto;
     height: 60vh;
     width: 70vw;
+}
+
+textarea
+{
+    margin: auto;
+}
+
+.map
+{
+    width: 80%;
+    height: 80vh;
 }

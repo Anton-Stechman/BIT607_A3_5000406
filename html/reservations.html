@@ -14,12 +14,12 @@
             <ul>
                 <li>
                     <label for="bName">&#42;Booking Name:</label><br>
-                    <input type="text" class="bName">
+                    <input type="text" class="bName" placeholder="Booking Name">
                 </li>
                 <br><br>
                 <li>
                     <label>&#42;Contact Number:</label><br>
-                    <input type="number" class="bNumber">
+                    <input type="number" class="bNumber" placeholder="021.....">
                 </li>
                 <br><br>
                 <li>
@@ -80,6 +80,7 @@
             
             function logBooking(booking, ref)
             {
+                
                 //save object to local storage
                 localStorage.setItem(ref, JSON.stringify(booking));
                 
@@ -171,21 +172,6 @@
                     this.bTime      = bTime;
                     this.bComment   = bComment;
                     this.ref        = ref;
-                    
-                this.book = function()
-                    {
-                        var str = ">New Booking:<br>";
-                        str += ">>Name:____________"+bName + "<br>";
-                        str += ">>>Phone:__________"+bPhone + "<br>";
-                        str += ">>>>Guests:________"+bSeats + "<br>";
-                        str += ">>>>>Date:_________"+bDate + "<br>";
-                        str += ">>>>>>Time:________"+bTime + "<br>";
-                        str += ">>>>>>>Comments:___"+bComment + "<br>";
-                        str += ">>>>>>>>Ref:_______"+ref;
-                        str += "<br>=====================================<br>"
-                        return str;
-                    }
-                    
                 }
                 
 

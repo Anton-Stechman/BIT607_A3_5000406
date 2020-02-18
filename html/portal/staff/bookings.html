@@ -13,6 +13,7 @@
                 color: #792a2a;
                 font-family: 'Bree Serif', serif;
                 font-size: 2.5vw;
+                margin: auto;
             }
             button
             {
@@ -35,7 +36,30 @@
             }
         </style>
         <div class="main">
-            
+            ===========================================<br>
+            <button value="demo" onclick="removeBooking(this)">Delete This Booking</button>
+            <p>>Booking:<br>
+                >>Name:___________John<br>
+                >>>Phone:_________0279956645<br>
+                >>>>Guests:_______2<br>
+                >>>>>Date:________2020.02.26<br>
+                >>>>>>Time:_______08:30<br>
+                >>>>>>>Comments:__no comment<br>
+                >>>>>>>>Ref:_______#53074<br>
+                ===========================================
+            </p>
+                        ===========================================<br>
+            <button value="demo" onclick="removeBooking(this)">Delete This Booking</button>
+            <p>>Booking:<br>
+                >>Name:___________Brenda<br>
+                >>>Phone:_________0218967743<br>
+                >>>>Guests:_______4<br>
+                >>>>>Date:________2020.02.21<br>
+                >>>>>>Time:_______16:30<br>
+                >>>>>>>Comments:__no comment<br>
+                >>>>>>>>Ref:_______#53097<br>
+                ===========================================
+            </p>
         </div>
         <footer>
         </footer>
@@ -44,8 +68,15 @@
             
             function removeBooking(booking)
             {
-                console.log("Working");
-                localStorage.removeItem(booking.value);
+                if (booking.value == "demo")
+                {
+                    window.alert("This booking cannot be deleted as it is for demo purposes only!");
+                }
+                else
+                {
+                    localStorage.removeItem(booking.value);
+                    
+                }
             }
             
             var format_booking = (obj) => 
