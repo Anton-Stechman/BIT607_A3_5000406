@@ -49,7 +49,7 @@ function frameLoad()
     console.log("working " + str);
     buttons.forEach(function (btn)
     {
-        if (("html/" + btn.value == str))
+        if (("https://bit607-as3-5000406.herokuapp.com/html/" + btn.value == str))
         {
             $(getCurrentSelection()).removeClass('button-selected');
             $(btn).addClass('button-selected');
