@@ -46,13 +46,12 @@ function frameLoad()
 {
     
     var str = displayPort.contentWindow.location.href;
-    console.log(str);
     
     for (i = 0; i < buttons.length; i++)
     {
         var btn = buttons[i];
-        var str2 = "https://bit607-as3-5000406.herokuapp.com/html/" + btn.value; 
-        
+        var str2 = "https://bit607-as3-5000406.herokuapp.com/" + btn.value; 
+        console.log(str2);
         if (str2 == str)
         {
             console.log("matched");
