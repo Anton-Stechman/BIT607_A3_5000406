@@ -15,7 +15,7 @@
                 font-size: 2.5vw;
                 margin: auto;
             }
-            button
+            .booking button
             {
                 align-content: center;
                 color: #792a2a;
@@ -24,6 +24,7 @@
                 background: transparent;
                 font-family: 'Bree Serif', serif;
                 cursor: pointer;
+                font-size: 2.5vw;
             }
             button:hover
             {
@@ -34,10 +35,14 @@
             {
                 outline: none;
             }
+            .booking
+            {
+                text-align: left;
+            }
         </style>
-        <div class="main">
+        <div class="main booking">
             ===========================================<br>
-            <button value="demo" onclick="removeBooking(this)">Delete This Booking</button>
+            <button value="demo" onclick="removeBooking(this)">Delete This Booking</button><br><br>
             <p>>Booking:<br>
                 >>Name:___________John<br>
                 >>>Phone:_________0279956645<br>
@@ -49,7 +54,7 @@
                 ===========================================
             </p>
                         ===========================================<br>
-            <button value="demo" onclick="removeBooking(this)">Delete This Booking</button>
+            <button value="demo" onclick="removeBooking(this)">Delete This Booking</button><br><br>
             <p>>Booking:<br>
                 >>Name:___________Brenda<br>
                 >>>Phone:_________0218967743<br>
@@ -82,7 +87,7 @@
             var format_booking = (obj) => 
             {
                 var str = "===========================================<br>"
-                str+="<button value='"+obj.ref+"'onclick='removeBooking(this)'>Delete This Booking</button><p>>Booking:<br>"
+                str+="<button value='"+obj.ref+"'onclick='removeBooking(this)'>Delete This Booking</button><br><br><p>>Booking:<br>"
                 str += ">>Name:___________" + obj.bName + "<br>";
                 str += ">>>Phone:_________" + obj.bPhone + "<br>";
                 str += ">>>>Guests:_______" + obj.bSeats + "<br>";
