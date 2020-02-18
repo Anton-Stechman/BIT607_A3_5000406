@@ -46,10 +46,12 @@ function frameLoad()
 {
     
     var str = displayPort.contentWindow.location.href;
-    console.log("working " + str);
+    console.log(str);
     buttons.forEach(function (btn)
     {
-        if (("https://bit607-as3-5000406.herokuapp.com/html/" + btn.value == str))
+        var str2 = "https://bit607-as3-5000406.herokuapp.com/html/" + btn.value; 
+        console.log(str2);
+        if (str2 == str)
         {
             $(getCurrentSelection()).removeClass('button-selected');
             $(btn).addClass('button-selected');
